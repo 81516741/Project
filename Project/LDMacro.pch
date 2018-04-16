@@ -1,0 +1,52 @@
+//
+//  LDMacro.pch
+//  Project
+//
+//  Created by 令达 on 2018/4/8.
+//  Copyright © 2018年 令达. All rights reserved.
+//
+
+#ifndef LDMacro_h
+#define LDMacro_h
+
+/**********CoCoaLumberJack框架****************/
+#define LOG_LEVEL_DEF ddLogLevel
+#import "CocoaLumberjack.h"
+
+#ifdef DEBUG
+static const DDLogLevel ddLogLevel = DDLogLevelVerbose;
+#else
+static const DDLogLevel ddLogLevel = DDLogLevelError;
+#endif
+
+#ifdef DEBUG
+#define LDLog(format, ...) DDLogError((@"日志:[文件名:%@]""[方法:%s]""[行号:%d] -- " format), [[NSString stringWithUTF8String:__FILE__] lastPathComponent],__PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+#else
+#define LDLog(...)
+#endif
+
+/**********颜色****************/
+#define kRGB(r, g, b) [UIColor colorWithRed:((r) / 255.0) green:((g) / 255.0) blue:((b) / 255.0) alpha:1.0]
+#define kRGBS(rgb) kRGB(rgb,rgb,rgb)
+#define kRGBAlpha(r, g, b, a) [UIColor colorWithRed:((r) / 255.0) green:((g) / 255.0) blue:((b) / 255.0) alpha:(a)]
+#define kHEXRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+/**********通知****************/
+#define kNotificationObserver(sel,notiName) [[NSNotificationCenter defaultCenter] addObserver:self selector:sel name:notiName object:nil];
+#define kNotificationPost(notiName) [[NSNotificationCenter defaultCenter]postNotificationName:notiName object:nil];
+#define kNotificationPostObject(notiName,object1) [[NSNotificationCenter defaultCenter]postNotificationName:notiName object:object1];
+
+/**********UI****************/
+#define kScreenWidth            SCREENBOUNDS.size.width
+#define kScreenHeight           SCREENBOUNDS.size.height
+#define kScreenBounds           [UIScreen mainScreen].bounds
+#define kPixel                  (1/[UIScreen mainScreen].scale)
+#define kscaleSize(size)        ((SCREENWIDTH/320) * size)
+#define kWindow                 [UIApplication  sharedApplication].delegate.window
+
+
+/**********字符串****************/
+#define kStringIsEmpty(string) ([string stringByReplacingOccurrencesOfString:@" " withString:@""].length == 0 || [string isEqualToString:@"(null)"] || [string isEqualToString:@"NSNull"])
+
+
+#endif /* LDMacro_h */
