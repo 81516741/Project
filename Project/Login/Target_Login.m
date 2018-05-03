@@ -17,8 +17,13 @@
     return vc;
 }
 
-- (void)Action_nativeCreateModuleLoginDBTables:(NSDictionary *)params
+- (void)Action_nativeCreateModuleLoginDBTables
 {
     [LDDBTool createLoginTables];
+}
+
+- (void)Action_nativeClearModuleLoginModels
+{
+    [LDDBTool clearnLoginModel];
 }
 @end

@@ -8,7 +8,7 @@
 
 #import "LDHTTPManager.h"
 #import "LDHTTPModel.h"
-#import "LDHTTPTool.h"
+#import "LDHTTPConst.h"
 
 @implementation LDHTTPManager
 

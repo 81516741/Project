@@ -14,4 +14,5 @@
  */
 - (UINavigationController *)login_getLoginController;
 - (void)login_createModuleLoginTables;
+- (void)login_clearModuleLoginModels;
 @end

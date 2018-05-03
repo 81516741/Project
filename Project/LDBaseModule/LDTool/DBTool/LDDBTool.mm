@@ -61,7 +61,7 @@
 
 + (void)clearSomeUselessData
 {
-    
+    [[LDMediator sharedInstance] login_clearModuleLoginModels];
 }
 @end
 

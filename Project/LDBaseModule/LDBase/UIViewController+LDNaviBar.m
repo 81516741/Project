@@ -7,10 +7,11 @@
 //
 
 #import "UIViewController+LDNaviBar.h"
-#import "NSObject+LDMonitor.h"
 #import <objc/runtime.h>
+#import "NSObject+LDMonitor.h"
 #import "LDLoadBaseSourceUtil.h"
 #import "UINavigationController+LDBase.h"
+
 #import "LDMediator+HTTP.h"
 
 @interface UIViewController (LDBasePrivate)
@@ -41,13 +42,13 @@
 - (void)ld_viewDidLoad
 {
     [self ld_viewDidLoad];
-    [self ld_configNavigationBar];
     [self ld_observerDealloc];
 }
 
 - (void)ld_viewWillAppear:(BOOL)animated
 {
     [self ld_viewWillAppear:animated];
+    [self ld_configNavigationBar];
     [self.navigationController setNavigationBarHidden:self.ld_hideNavigationBar animated:animated];
     if (self.ld_naviBarColor) {
         [self ld_setNavibarColor:self.ld_naviBarColor];
@@ -60,7 +61,7 @@
 {
     CGFloat screenW = [UIScreen mainScreen].bounds.size.width;
     [self.navigationController.navigationBar setBackgroundImage:[UIViewController ld_imageWithBgColor:color size:CGSizeMake(screenW, 64)] forBarMetrics:UIBarMetricsDefault];
-    self.navigationController.navigationBar.shadowImage = [UIViewController ld_imageWithBgColor:[UIColor lightGrayColor] size:CGSizeMake(screenW, 1/[UIScreen mainScreen].scale)];
+    self.navigationController.navigationBar.shadowImage = [UIViewController ld_imageWithBgColor:[UIColor clearColor] size:CGSizeMake(screenW, 1/[UIScreen mainScreen].scale)];
 }
 
 - (void)ld_setNaviBarRightItemText:(NSString *)text color:(UIColor *)color sel:(SEL)sel
@@ -103,20 +104,40 @@
     {
         
     } else if(self.navigationController.childViewControllers.count > 1){
+        UIColor * worldColor;
+        NSString * backIconName;
+        if (self.ld_theme == NaviBarThemeWhite) {
+            worldColor = [UIColor grayColor];
+            backIconName = @"icon_back_gray";
+            [self ld_setNavibarColor:[UIColor whiteColor]];
+        } else if (self.ld_theme == NaviBarThemeBlue) {
+            worldColor = [UIColor whiteColor];
+            backIconName = @"icon_back_white";
+            [self ld_setNavibarColor:[UIColor blueColor]];
+        }
+        
         UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [backButton addTarget:self action:@selector(ld_back) forControlEvents:UIControlEventTouchUpInside];
         backButton.frame = CGRectMake(0, 0, 58, 44);
         
         UIImageView * imageView = [[UIImageView alloc] init];
         imageView.image =
-        [LDLoadBaseSourceUtil getImage:@"icon_back_default"];
+        [[LDLoadBaseSourceUtil getImage:backIconName]  imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         imageView.frame = CGRectMake(0, 10, 10, 20);
+        
         
         UILabel * wordLable = [[UILabel alloc] initWithFrame:CGRectMake(15, -2, 40, 44)];
         wordLable.font = [UIFont systemFontOfSize:15];
-        wordLable.textColor = [UIColor grayColor];
+        wordLable.textColor = worldColor;
         wordLable.text = @"返回";
         
+        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0 , 100, 44)];
+        titleLabel.backgroundColor = [UIColor clearColor];
+        titleLabel.font = [UIFont systemFontOfSize:16];
+        titleLabel.textColor = worldColor;
+        titleLabel.textAlignment = NSTextAlignmentCenter;
+        titleLabel.text = self.title;
+        self.navigationItem.titleView = titleLabel;
         
         UIView * customView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 58, 44)];
         [customView addSubview:backButton];
@@ -127,6 +148,7 @@
     }
     
 }
+
 
 - (void)ld_observerDealloc
 {
@@ -196,5 +218,15 @@
 - (void)setLd_naviBarColor:(UIColor *)ld_naviBarColor
 {
     objc_setAssociatedObject(self, @selector(ld_naviBarColor), ld_naviBarColor, OBJC_ASSOCIATION_RETAIN);
+}
+
+- (void)setLd_theme:(NaviBarTheme)ld_theme
+{
+    objc_setAssociatedObject(self, @selector(ld_theme), @(ld_theme), OBJC_ASSOCIATION_ASSIGN);
+}
+
+- (NaviBarTheme)ld_theme
+{
+    return [objc_getAssociatedObject(self, _cmd) integerValue];
 }
 @end

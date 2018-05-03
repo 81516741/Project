@@ -6,5 +6,6 @@ pod 'AFNetworking', '3.2.0'
 pod 'WCDB','1.0.6'
 pod 'MJExtension', '3.0.13'
 pod 'ReactiveObjC', '3.1.0'
+pod 'MBProgressHUD', '0.9.2'
 target ‘Project’ do
 end

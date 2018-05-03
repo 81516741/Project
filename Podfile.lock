@@ -20,6 +20,7 @@ PODS:
   - CocoaLumberjack/Default (3.4.1)
   - CocoaLumberjack/Extensions (3.4.1):
     - CocoaLumberjack/Default
+  - MBProgressHUD (0.9.2)
   - MJExtension (3.0.13)
   - ReactiveObjC (3.1.0)
   - WCDB (1.0.6):
@@ -29,6 +30,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (= 3.2.0)
   - CocoaLumberjack (= 3.4.1)
+  - MBProgressHUD (= 0.9.2)
   - MJExtension (= 3.0.13)
   - ReactiveObjC (= 3.1.0)
   - WCDB (= 1.0.6)
@@ -36,10 +38,11 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
   CocoaLumberjack: 2e258a064cacc8eb9a2aca318e24d02a0a7fd56d
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
   WCDB: 4d2926bf695b2e00d785b50afd32c2dcc8cbbd98
 
-PODFILE CHECKSUM: a2968ea260e78bd74fc94c946a51bca2fb51d935
+PODFILE CHECKSUM: 7e008336f587fd8225ddae01fdbfd3950716c800
 
 COCOAPODS: 1.4.0

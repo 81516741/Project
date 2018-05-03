@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.ld_hideNavigationBar = YES;
+    self.title = @"你妹的";
     self.view.backgroundColor = [UIColor blueColor];
 }
 

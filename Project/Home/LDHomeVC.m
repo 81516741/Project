@@ -10,6 +10,8 @@
 #import "LDOtherVC.h"
 #import "UIViewController+LDNaviBar.h"
 #import "LDFunctionTool.h"
+#import "MBProgressHUD+LDHUD.h"
+#import "LDPictureCutController.h"
 
 @interface LDHomeVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -62,6 +64,13 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    LDPictureCutController * cutVC = [[LDPictureCutController alloc] init];
+    cutVC.image = [UIImage imageNamed:@"P1.png"];
+    [self presentViewController:cutVC animated:YES completion:nil];
 }
 
 @end

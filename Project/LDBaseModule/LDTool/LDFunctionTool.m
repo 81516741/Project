@@ -10,6 +10,7 @@
 #import "LDMediator+Login.h"
 #import "LDMediator+Home.h"
 #import "UIViewController+LDLogin.h"
+#import "UIViewController+LDNaviBar.h"
 
 @implementation LDFunctionTool
 

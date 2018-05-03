@@ -8,7 +8,7 @@
 
 #import "LDMediator.h"
 
-@interface LDMediator (LDModuleA)
+@interface LDMediator (Home)
 /**
  返回包装了导航控制器的模块A控制器
  */

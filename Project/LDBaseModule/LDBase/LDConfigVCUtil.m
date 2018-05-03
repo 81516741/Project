@@ -18,9 +18,9 @@
 NSString * const kVersionKey = @"CFBundleShortVersionString";
 NSString * const kLoginStateKey = @"kLoginStateKey";
 
+#pragma mark - LDConfigVCUtil
 @implementation LDConfigVCUtil
 
-#pragma mark - main functions
 + (void)config:(BOOL)mustLogin
 {
     //打印cachepath，因为这个会经常使用到
@@ -116,8 +116,10 @@ NSString * const kLoginStateKey = @"kLoginStateKey";
 @end
 
 
+#pragma mark - LDNewFeatureView
 @implementation LDNewFeatureView
-#pragma mark - life cycle
+
+
 NSArray * images;
 - (instancetype)init
 {
