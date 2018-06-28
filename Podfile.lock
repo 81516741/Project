@@ -35,6 +35,15 @@ DEPENDENCIES:
   - ReactiveObjC (= 3.1.0)
   - WCDB (= 1.0.6)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - CocoaLumberjack
+    - MBProgressHUD
+    - MJExtension
+    - ReactiveObjC
+    - WCDB
+
 SPEC CHECKSUMS:
   AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
   CocoaLumberjack: 2e258a064cacc8eb9a2aca318e24d02a0a7fd56d
@@ -45,4 +54,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 7e008336f587fd8225ddae01fdbfd3950716c800
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3
