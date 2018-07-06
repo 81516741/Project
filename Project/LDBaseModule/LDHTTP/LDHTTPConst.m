@@ -8,7 +8,7 @@
 
 #import "LDHTTPConst.h"
 
-NSString * const kLDHTTPDomainURL = @"https://dev.withbtc.com";
+NSString * const kLDHTTPDomainURL = @"http://service.tunnel.qydev.com";
 
 NSString * const kLDHTTPImageUploadImageDataKey = @"kHTTPImageUploadImageData";
 NSString * const kLDHTTPImageUploadImageNameKey = @"kHTTPImageUploadImageName";

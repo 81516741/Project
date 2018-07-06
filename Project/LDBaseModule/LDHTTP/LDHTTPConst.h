@@ -18,5 +18,6 @@ extern NSString * const kLDHTTPRequestTokenKey;
 
 NSString * http_realPath(NSString * path);
 
-#define kHTTPLoginRequest http_realPath(@"/app/api/isMobileRegister")
+//这个写在这里的原因是因为登录失败的重新请求需要在这里
+#define kHTTPLoginRequest http_realPath(@"/ldapp/applogin")
 

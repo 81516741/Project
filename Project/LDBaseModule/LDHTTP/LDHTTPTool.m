@@ -210,7 +210,7 @@ NSMutableDictionary * taskDescriptions;
         #elif TARGET_OS_IPHONE
         @"deviceToken":@"deviceTokenReal",
         #endif
-        @"key":parameters[@"key"]
+        @"parameters":parameters
     };
     //2.装饰请求模型
     model = [LDHTTPTool decorate:model httpType:LDHTTPTypePost url:kHTTPLoginRequest parameters:parameters];

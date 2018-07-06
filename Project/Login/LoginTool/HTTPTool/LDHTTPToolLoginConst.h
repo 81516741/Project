@@ -8,5 +8,5 @@
 
 #import "LDHTTPConst.h"
 
-#define kHTTPAgreementRequest http_realPath(@"/app/api/agreement/getAgreement")
-#define kHTTPSetAvatarRequest http_realPath(@"/app/api/member/setAvatar")
+#define kHTTPTestRequest http_realPath(@"/ldapp/appget")
+#define kHTTPUploadPicRequest http_realPath(@"/ldapp/appuploadpic")

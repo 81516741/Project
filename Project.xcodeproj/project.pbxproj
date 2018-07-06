@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D511DB420EE0D50003332AB /* LDHTTPTool+Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D511DB320EE0D50003332AB /* LDHTTPTool+Login.m */; };
 		0D6900B92079F0430090D89A /* LDHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6900A22079F0420090D89A /* LDHomeVC.m */; };
 		0D6900BA2079F0430090D89A /* LDHomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D6900A32079F0420090D89A /* LDHomeVC.xib */; };
 		0D6900BB2079F0430090D89A /* LDOtherVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6900A52079F0420090D89A /* LDOtherVC.m */; };
@@ -50,7 +51,6 @@
 		0D69020C207E2C970090D89A /* LDBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D690208207E2C970090D89A /* LDBehavior.m */; };
 		0D69020D207E2C970090D89A /* LDImageViewBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D690209207E2C970090D89A /* LDImageViewBehavior.m */; };
 		0D69020E207E2C970090D89A /* LDTextFieldBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D69020A207E2C970090D89A /* LDTextFieldBehavior.m */; };
-		0D69021A207EE6F10090D89A /* LDHTTPToolLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D690219207EE6F10090D89A /* LDHTTPToolLogin.m */; };
 		0D69021D207F54D50090D89A /* LDFunctionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D69021C207F54D50090D89A /* LDFunctionTool.m */; };
 		0D69FF212078BEF00090D89A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D69FF202078BEF00090D89A /* AppDelegate.m */; };
 		0D69FF292078BEF10090D89A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D69FF282078BEF10090D89A /* Assets.xcassets */; };
@@ -81,6 +81,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D511DB220EE0D50003332AB /* LDHTTPTool+Login.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LDHTTPTool+Login.h"; sourceTree = "<group>"; };
+		0D511DB320EE0D50003332AB /* LDHTTPTool+Login.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "LDHTTPTool+Login.m"; sourceTree = "<group>"; };
 		0D6900A12079F0420090D89A /* LDHomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDHomeVC.h; sourceTree = "<group>"; };
 		0D6900A22079F0420090D89A /* LDHomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDHomeVC.m; sourceTree = "<group>"; };
 		0D6900A32079F0420090D89A /* LDHomeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LDHomeVC.xib; sourceTree = "<group>"; };
@@ -161,9 +163,7 @@
 		0D690208207E2C970090D89A /* LDBehavior.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDBehavior.m; sourceTree = "<group>"; };
 		0D690209207E2C970090D89A /* LDImageViewBehavior.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDImageViewBehavior.m; sourceTree = "<group>"; };
 		0D69020A207E2C970090D89A /* LDTextFieldBehavior.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDTextFieldBehavior.m; sourceTree = "<group>"; };
-		0D690213207E2F450090D89A /* LDHTTPToolLogin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LDHTTPToolLogin.h; sourceTree = "<group>"; };
 		0D690216207E32F30090D89A /* LDHTTPToolLoginConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LDHTTPToolLoginConst.h; sourceTree = "<group>"; };
-		0D690219207EE6F10090D89A /* LDHTTPToolLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDHTTPToolLogin.m; sourceTree = "<group>"; };
 		0D69021B207F54D50090D89A /* LDFunctionTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LDFunctionTool.h; sourceTree = "<group>"; };
 		0D69021C207F54D50090D89A /* LDFunctionTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LDFunctionTool.m; sourceTree = "<group>"; };
 		0D69FF1C2078BEF00090D89A /* Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -452,8 +452,8 @@
 			isa = PBXGroup;
 			children = (
 				0D690216207E32F30090D89A /* LDHTTPToolLoginConst.h */,
-				0D690213207E2F450090D89A /* LDHTTPToolLogin.h */,
-				0D690219207EE6F10090D89A /* LDHTTPToolLogin.m */,
+				0D511DB220EE0D50003332AB /* LDHTTPTool+Login.h */,
+				0D511DB320EE0D50003332AB /* LDHTTPTool+Login.m */,
 			);
 			path = HTTPTool;
 			sourceTree = "<group>";
@@ -722,13 +722,13 @@
 				0D69FF212078BEF00090D89A /* AppDelegate.m in Sources */,
 				0D69011A207B2CDB0090D89A /* LDHTTPConst.m in Sources */,
 				0D690113207A093E0090D89A /* LDHTTPTool.m in Sources */,
+				0D511DB420EE0D50003332AB /* LDHTTPTool+Login.m in Sources */,
 				0D69017D207CDEED0090D89A /* LDLoginModel.mm in Sources */,
 				0D69020E207E2C970090D89A /* LDTextFieldBehavior.m in Sources */,
 				0D6901042079FC740090D89A /* LDLogTool.m in Sources */,
 				0D6900C22079F0430090D89A /* LDMineVC.m in Sources */,
 				0D690136207B5E370090D89A /* Target_Mine.m in Sources */,
 				0D690132207B5E0B0090D89A /* Target_LDHTTP.m in Sources */,
-				0D69021A207EE6F10090D89A /* LDHTTPToolLogin.m in Sources */,
 				0D6901B5207DD1880090D89A /* LDMediator+HTTP.m in Sources */,
 				0D6901B6207DD1880090D89A /* LDMediator+Login.m in Sources */,
 				0D6901012079F4210090D89A /* LDDBTool.mm in Sources */,

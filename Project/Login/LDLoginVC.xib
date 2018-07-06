@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LDLoginVC">
             <connections>
+                <outlet property="countField" destination="0Ql-lt-Teu" id="dKs-MH-gaI"/>
+                <outlet property="passwordField" destination="fD0-wE-OWn" id="fiy-Vw-ztU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -84,9 +86,9 @@
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OJn-S6-Y2b">
-                            <rect key="frame" x="281" y="342" width="62" height="30"/>
+                            <rect key="frame" x="251" y="342" width="92" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <state key="normal" title="忘记密码">
+                            <state key="normal" title="模拟上传图片">
                                 <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
@@ -117,11 +119,16 @@
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCJ-E4-IRl">
                             <rect key="frame" x="142.5" y="607" width="90" height="30"/>
+                            <color key="backgroundColor" red="0.25882352939999997" green="0.52941176469999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="90" id="VMI-iq-NjZ"/>
                                 <constraint firstAttribute="height" constant="30" id="tt4-Ha-1Tt"/>
                             </constraints>
-                            <state key="normal" image="regsiter_btn.png"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="测试Get传参"/>
+                            <connections>
+                                <action selector="clickRegister:" destination="-1" eventType="touchUpInside" id="VQH-y9-nDF"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AMv-gg-Lqd">
                             <rect key="frame" x="5" y="5" width="50" height="50"/>
@@ -170,7 +177,7 @@
         </view>
         <customObject id="rUs-HR-xBl" userLabel="账号" customClass="LDTextFieldBehavior">
             <userDefinedRuntimeAttributes>
-                <userDefinedRuntimeAttribute type="number" keyPath="textLength">
+                <userDefinedRuntimeAttribute type="number" keyPath="minTextLength">
                     <integer key="value" value="0"/>
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
@@ -201,6 +208,5 @@
     </objects>
     <resources>
         <image name="logo.png" width="402" height="402"/>
-        <image name="regsiter_btn.png" width="210" height="75"/>
     </resources>
 </document>

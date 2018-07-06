@@ -43,7 +43,8 @@
 
 /**
  登录请求，登录请求必须放在LDHTTPTool这里，因为如果是有token失效，
- 需要重新更新token的app，放在这里最合适
+ 需要重新更新token的app，放在这里最合适，不放在中间件里面是因为，
+ 我不希望LDHTTP和别模块的产生关联
  */
 + (void)loginRequest:(LDHTTPModel *)model parameters:(NSDictionary *)parameters success:(void (^)(LDHTTPModel * response))success failure:(void (^)(LDHTTPModel * response))failure;
 

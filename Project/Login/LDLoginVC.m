@@ -9,9 +9,11 @@
 #import "LDLoginVC.h"
 #import "UIViewController+LDNaviBar.h"
 #import "UIViewController+LDLogin.h"
-#import "LDHTTPToolLogin.h"
+#import "LDHTTPTool+Login.h"
 
 @interface LDLoginVC ()
+@property (weak, nonatomic) IBOutlet UITextField *countField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordField;
 
 @end
 
@@ -23,8 +25,14 @@
 }
 
 - (IBAction)clickLoginBtn:(UIButton *)sender {
-    //模拟的一个请求
-    [LDHTTPToolLogin getAgreementRequest:[LDHTTPModel model:@"请求法律与协议h5" VCName:@"LDLoginVC" dataClass:nil] parameters:nil success:^(LDHTTPModel *response) {
+    LDHTTPModel * request = [LDHTTPModel model:@"登录"
+                                        VCName:@"LDLoginVC"
+                                     dataClass:nil];
+    NSDictionary * parameters = @{
+                                  @"count":self.countField.text,
+                                  @"password":self.passwordField.text
+                                  };
+    [LDHTTPTool loginRequest:request parameters:parameters success:^(LDHTTPModel *response) {
         [self dismissViewControllerAnimated:YES completion:nil];
         if (self.ld_loginSuccessBlock) {
             self.ld_loginSuccessBlock(@{@"key":@"value"});
@@ -34,13 +42,21 @@
     }];
 }
 - (IBAction)clickForgetPassword:(UIButton *)sender {
-    [LDHTTPToolLogin imageUploadRequest:[LDHTTPModel model:@"上传图片" VCName:@"LDLoginVC" dataClass:nil] parameters:nil success:^(LDHTTPModel *response) {
+    [LDHTTPTool imageUploadRequest:[LDHTTPModel model:@"上传图片" VCName:@"LDLoginVC" dataClass:nil] parameters:nil success:^(LDHTTPModel *response) {
         
     } failure:^(LDHTTPModel *response) {
         
     }];
 }
 
+- (IBAction)clickRegister:(UIButton *)sender {
+    //模拟的一个请求
+    [LDHTTPTool getGetRequest:[LDHTTPModel model:@"test请求" VCName:@"LDLoginVC" dataClass:nil] parameters:@{@"lingda":@"shuai"} success:^(LDHTTPModel *response) {
+        
+    } failure:^(LDHTTPModel *response) {
+        
+    }];
+}
 
 - (IBAction)back{
     [self dismissViewControllerAnimated:YES completion:nil];
